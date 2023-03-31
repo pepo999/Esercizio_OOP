@@ -7,7 +7,7 @@ class Client extends Person{
     }
     
     addOrder(order){
-       return orders.push(order);
+       return orders.push();
     }
 
     totalOrderPrice(){
