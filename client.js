@@ -19,14 +19,24 @@ class Client extends Person{
         return totalPrice;
     }
 
+multipleOrdersInString(){
+    let stringRes = '';
+    for (let i = 0; i < this.orders.length; i++) {
+        const element = this.orders[i].toString();
+        stringRes += element + '\n' + '-----------------------------------' + '\n' ;
+        
+    }
+    return stringRes;
+}
+
     toString(){
         return `${super.toString()}
 Indirizzo: ${this.address}
 Numero Ordini: ${this.orders.length}
 Spesa Totale: ${this.totalOrderPrice().toFixed(2)} € 
 Lista Ordini: 
---------------------------------------------------------------------------
-${this.orders}`
+-----------------------------------
+${this.multipleOrdersInString()}`
     }
 
 } 
