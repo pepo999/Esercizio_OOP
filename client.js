@@ -7,23 +7,26 @@ class Client extends Person{
     }
     
     addOrder(order){
-       return orders.push();
+       return this.orders.push(order);
     }
 
     totalOrderPrice(){
-        let totOrderPrice = 0;
-        for (let i = 0; i < orders.length; i++) {
-            totOrderPrice += orders[i];
-            
+        let totalPrice = 0;
+        for (let i = 0; i < this.orders.length; i++) {
+            const element = this.orders[i];
+            totalPrice += element.getTotalPrice();
         }
-        return totOrderPrice;
+        return totalPrice;
     }
 
     toString(){
         return `${super.toString()}
 Indirizzo: ${this.address}
-Numero Ordini: ${this.orders.length}`
-
+Numero Ordini: ${this.orders.length}
+Spesa Totale: ${this.totalOrderPrice().toFixed(2)} € 
+Lista Ordini: 
+--------------------------------------------------------------------------
+${this.orders}`
     }
 
 } 

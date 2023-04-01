@@ -1,4 +1,4 @@
-class Order{
+class Order {
 
     constructor(product, quantity, uPrice){
         this.product = product;
@@ -6,8 +6,8 @@ class Order{
         this.uPrice = uPrice;
     }
 
+
     getTotalPrice(){
-        
          return this.quantity * this.uPrice;
     }
 
