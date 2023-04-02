@@ -8,7 +8,7 @@ class Person{
 
     toString(){
         return `Nome: ${this.name} ${this.surname}
-Data di nascità: ${this.dob}`
+Data di nascita: ${this.dob}`
     }
 
 }
