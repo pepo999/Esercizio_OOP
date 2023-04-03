@@ -16,22 +16,45 @@ const employee2 = new Employee('Gigi', 'Guantaim', [client4, client5])
 
 const manager1 = new Manager('Valentina', 'Cherubini', [employee1, employee2])
 
-// client1.addOrder(order5);
+console.log(employee2.toString())
 
-// console.log(employee1.toString());
+console.log(manager1.toString())
 
-// const order4 = new Order('Pinzatrici', 10, 10);
+//METODI STATICI DELLE CLASSI
 
-// console.log(order1.getTotalPrice());
+console.log(Math.sqrt(16)); //4
 
-// console.log(client1.toString());
+//MATH è una classe statica: le sue funzione sono statiche, cioè non dipendono da nessuna proprietà che la classe ha
+//riconosciamo subito una funziona statica perchè non ha il this.
+//una classe che ha solo metodi statici è una classe statica
 
-// console.log(employee1.toString())
+const numbers = [3, 4, 5, 9]
 
-// console.log(employee1.bestClient())
+console.log(Utility.filter(numbers, function(element){return element > 4}))   //versione normale
+console.log(Utility.filter(numbers, (element) => element > 4))      //versione lambda
 
-// employee1.addClient(client3)
+function isEven(element) {return element % 2 === 0}
+console.log(Utility.filter(numbers, isEven))  //usando una funzione creata esternamente
 
-// console.log(employee1.toString())
+function multiplyBy3(element){
+    return element * 3;
+}
+console.log(Utility.map(numbers, function(element){return element *3}))
+console.log(Utility.map(numbers,multiplyBy3))
+console.log(Utility.map(numbers, (element) => element * 3))
 
-console.log(employee1.toString())
+console.log(Utility.reduce(numbers, (previous, current) => previous + current))
+function sum(a, b){
+return a + b
+}
+console.log(Utility.reduce(numbers, sum, 0))
+
+//fare filter con la reduce: (PORCATA)
+
+console.log(Utility.reduce(numbers, (accumulator, current) => {
+if(current % 2 === 0) {
+    accumulator.push(current);
+} return accumulator;
+}, []))
+
+

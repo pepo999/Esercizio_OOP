@@ -40,4 +40,5 @@ Clienti: ${this.totalClients()}
 Guadagni totali: ${this.earnings()} €`
     }
 
+
 }
